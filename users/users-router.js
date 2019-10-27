@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const axios = require('axios');
 
 // Bring in functionality 
 const Users = require('./users-model');

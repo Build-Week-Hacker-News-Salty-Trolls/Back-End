@@ -4,8 +4,9 @@ const helmet = require('helmet');
 
 
 const AuthRouter = require('../auth/auth-router');
+const AuthorRouter = require('../authors/authors-router');
 const UsersRouter = require('../users/users-router');
-
+const CommentsRouter = require('../comments/comments-router');
 
 const server = express();
 
@@ -18,8 +19,8 @@ server.use(express.json());
 
 server.use('/api/auth', AuthRouter);
 server.use('/api/loggedin', UsersRouter);
-
-
+server.use('/api/hacker-news', AuthorRouter);
+server.use('/api/salt', CommentsRouter);
 
 
 

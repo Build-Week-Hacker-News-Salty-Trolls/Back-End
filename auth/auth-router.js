@@ -46,7 +46,7 @@ router.post('/login', (req, res)=>{
     });
 });
 
-
+// Token Function 
 function generateToken(user) {
     const payload = {
         username: user.username,
