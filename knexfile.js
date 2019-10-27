@@ -3,17 +3,21 @@
 module.exports = {
 
   development: {
-    client: 'sqlite3',
+    client: 'pg',
     connection: {
-      filename: './database/saltiestdata.db3'
+      database: 'test',
+      user:     'postgres',
+      password: 'Holly602'
     },
     migration: {
       directory: "./migrations",
       tableName: 'knex_migrations'
     },
-    useNullAsDefault: true,
+   seeds: {
+      directory: "./seeds",
   },
-  
+},
+
 
 
   production: {

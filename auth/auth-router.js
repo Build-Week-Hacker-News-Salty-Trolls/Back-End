@@ -7,8 +7,6 @@ const secrets = require('../config/secrets');
 // USERS FUNCTIONALITY 
 const Users = require('../users/users-model');
 
-
-
 // Authorization for creating a user 
 router.post('/register', (req, res) => {
     // Implementing registration 
@@ -20,6 +18,9 @@ router.post('/register', (req, res) => {
     Users.add(user)
         .then(saved => {
             res.status(201).json(saved);
+        })
+        .catch(err => {
+            res.status(500).json(err.message);
         })
 });
 

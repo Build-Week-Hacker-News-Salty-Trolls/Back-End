@@ -3,10 +3,10 @@ const db = require('../database/dbConfig');
 
 
 module.exports = {
-    getTopSaltScore 
+    getAllComments
 };
 
 
-function getTopSaltScore() {
-    
+function getAllComments() {
+    return db('Articles').select('id', 'author', 'comment');
 }
